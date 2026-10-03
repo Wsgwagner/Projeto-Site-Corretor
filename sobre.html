@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/sobre.css">
+</head>
+
+<body>
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header class="cabecalho">
+        <div class="container cabecalho__interno">
+
+            <a href="index.html" class="logo">
+                <img src="Assets/logoRicardo.png" alt="Ricardo Imóveis" class="logo__imagem">
+            </a>
+
+            <!-- Checkbox invisível que controla o menu no celular -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburguer" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="menu">
+                <ul class="menu__lista">
+                    <li><a href="index.html" class="menu__link ">Início</a></li>
+                    <li><a href="sobre.html" class="menu__link menu__link--ativo">Sobre</a></li>
+                    <li><a href="imoveis.html" class="menu__link">Imóveis</a></li>
+                    <li><a href="depoimentos.html" class="menu__link">Depoimentos</a></li>
+                    <li><a href="contato.html" class="menu__link menu__link--destaque">Contato</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+
+
+    <!-- ==================== CHAMADA FINAL ==================== -->
+    <section class="chamada">
+        <div class="container chamada__interno">
+            <div class="chamada__texto-bloco">
+                <h2 class="chamada__titulo">Quer vender ou alugar seu imóvel?</h2>
+                <p class="chamada__texto">
+                    Faço a avaliação sem compromisso e cuido da divulgação, das visitas e da documentação.
+                </p>
+            </div>
+            <a href="https://wa.me/5551998887776" class="botao chamada__botao" target="_blank" rel="noopener">
+                Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="rodape">
+        <div class="container rodape__grid">
+
+            <div class="rodape__coluna">
+                <span class="logo logo--rodape">
+                    <img src="Assets/logoRicardo.png" alt="Ricardo Imóveis" class="logo__imagem">
+                </span>
+                <p class="rodape__sobre">
+                    Corretor de imóveis autônomo, atuando há mais de 10 anos em Taquara
+                    e região do Vale do Paranhana. CRECI/RS 00000-F.
+                </p>
+
+                <div class="redes">
+                    <a href="https://instagram.com/" class="redes__link" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+                            <circle cx="12" cy="12" r="4.2" />
+                            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/" class="redes__link" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <!-- FACEBOOK -->
+                            <path
+                                d="M14 9h3.2V5.9H14c-2.3 0-4.1 1.8-4.1 4.1V12H7.3v3.1h2.6V22H13v-6.9h2.9l.6-3.1H13v-2c0-.6.4-1 1-1z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/" class="redes__link" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <!-- LINKEDIN -->
+                            <path
+                                d="M5 3.5a2.4 2.4 0 1 1 0 4.9 2.4 2.4 0 0 1 0-4.9zM3.1 9.6h3.8V21H3.1zM10 9.6h3.6v1.6h.05c.5-.9 1.75-1.9 3.6-1.9 3.85 0 4.6 2.4 4.6 5.6V21h-3.8v-5.4c0-1.3 0-3-1.85-3-1.85 0-2.15 1.4-2.15 2.9V21H10z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="rodape__coluna">
+                <h3 class="rodape__titulo">Contato</h3>
+                <ul class="rodape__lista">
+                    <li><a href="tel:+555135421000" class="rodape__link">(51) 3542-1000</a></li>
+                    <li><a href="https://wa.me/5551996478999" class="rodape__link" target="_blank">(51) 99647-8999</a></li>
+                    <li>
+                        <a href="https://wa.me/5551996478999" class="rodape__link rodape__link--zap" target="_blank"
+                            rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-5.9c-.25-.12-1.45-.72-1.68-.8-.22-.08-.38-.12-.55.12l-.75.8c-.14.16-.28.18-.52.06a6.6 6.6 0 0 1-3.25-2.84c-.12-.24 0-.37.1-.5l.4-.5c.12-.16.08-.3 0-.42l-.72-1.74c-.19-.45-.38-.39-.52-.4h-.45c-.16 0-.42.06-.63.3-.22.24-.83.81-.83 1.98s.85 2.29.97 2.45c.12.16 1.67 2.55 4.05 3.58 1.9.82 2.29.66 2.7.62.41-.04 1.34-.55 1.53-1.07.19-.53.19-.98.13-1.07-.06-.1-.22-.16-.46-.28z" />
+                            </svg>
+                            Chamar no WhatsApp
+                        </a>
+                    </li>
+                    <li><a href="mailto:contato@ricardoimoveis.com.br"
+                            class="rodape__link">contato@ricardoimoveis.com.br</a></li>
+                </ul>
+            </div>
+
+            <div class="rodape__coluna">
+                <h3 class="rodape__titulo">Navegação</h3>
+                <ul class="rodape__lista">
+                    <li><a href="index.html" class="rodape__link">Início</a></li>
+                    <li><a href="sobre.html" class="rodape__link">Sobre</a></li>
+                    <li><a href="imoveis.html" class="rodape__link">Imóveis</a></li>
+                    <li><a href="depoimentos.html" class="rodape__link">Depoimentos</a></li>
+                    <li><a href="contato.html" class="rodape__link">Contato</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="rodape__base">
+            <div class="container">
+                <p>&copy; 2026 Ricardo Imóveis — Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/imoveis.css">
+</head>
+
+<body>
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header class="cabecalho">
+        <div class="container cabecalho__interno">
+
+            <a href="index.html" class="logo">
+                <img src="Assets/logoRicardo.png" alt="Ricardo Imóveis" class="logo__imagem">
+            </a>
+
+            <!-- Checkbox invisível que controla o menu no celular -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburguer" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="menu">
+                <ul class="menu__lista">
+                    <li><a href="index.html" class="menu__link">Início</a></li>
+                    <li><a href="sobre.html" class="menu__link">Sobre</a></li>
+                    <li><a href="imoveis.html" class="menu__link menu__link--ativo">Imóveis</a></li>
+                    <li><a href="depoimentos.html" class="menu__link">Depoimentos</a></li>
+                    <li><a href="contato.html" class="menu__link menu__link--destaque">Contato</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+
+        <!-- ==================== CABEÇALHO DA PÁGINA ==================== -->
+        <section class="pagina-topo">
+            <div class="container">
+                <span class="subtitulo">Catálogo completo</span>
+                <h1 class="pagina-topo__titulo">Imóveis disponíveis</h1>
+                <p class="pagina-topo__texto">
+                    Passe o mouse sobre a foto para ver mais imagens do imóvel.
+                    Clique na foto para ver todas em tamanho grande.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== CATÁLOGO ==================== -->
+        <section class="secao">
+            <div class="container">
+                <div class="cards">
+
+                    <!-- ---------- IMÓVEL 1 ---------- -->
+                    <article class="card">
+                        <div class="card__galeria">
+
+                            <img class="card__principal" src="Assets/Casa1/imgcasa1entrada.jpeg"
+                                alt="Fachada da casa em Cachoeira do Bom Jesus">
+
+                            <span class="card__selo">Venda</span>
+                            <span class="card__contador"></span>
+
+                            <!-- Painel que sobe no hover.
+                                 Cada <button> é uma foto. Acrescente ou remova
+                                 quantos quiser: o JS conta sozinho. -->
+                            <div class="card__miniaturas">
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/Casa1/imgcasa1entrada.jpeg" alt="Fachada">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/Casa1/imgcasa1sala.jpeg" alt="Sala de estar">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/Casa1/imgcasa1cozinha.jpeg" alt="Cozinha">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/Casa1/imgcasa1piscina.jpeg" alt="Piscina">
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="card__corpo">
+                            <span class="card__preco">R$ 1.800.000</span>
+                            <h2 class="card__titulo">Casa com pátio, churrasqueira e piscina</h2>
+                            <p class="card__local">Cachoeira do Bom Jesus &middot; Florianópolis/SC</p>
+                            <ul class="card__infos">
+                                <li>3 dorm.</li>
+                                <li>3 banh.</li>
+                                <li>2 vagas</li>
+                                <li>180 m&sup2;</li>
+                            </ul>
+                            <a href="contato.html" class="card__link">Agendar visita</a>
+                        </div>
+                    </article>
+
+                    <!-- ---------- IMÓVEL 2 ---------- -->
+                    <article class="card">
+                        <div class="card__galeria">
+
+                            <img class="card__principal" src="Assets/apartamento/imgapsala.jpeg"
+                                alt="Sala do apartamento em Ponta das Canas">
+
+                            <span class="card__selo card__selo--aluguel">Aluguel / Diária</span>
+                            <span class="card__contador"></span>
+
+                            <div class="card__miniaturas">
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento/imgapsala.jpeg" alt="Sala">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento/imgapquarto.jpeg" alt="Quarto">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento/imgapquarto2.jpeg" alt="Cozinha">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento/imgapsacada.jpeg" alt="Cozinha">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento/imgapbanheiro1.jpeg" alt="Cozinha">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento/imgapbanheiro2.jpeg" alt="Cozinha">
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="card__corpo">
+                            <span class="card__preco">R$ 800<small>/diária</small></span>
+                            <h2 class="card__titulo">Apartamento em Ponta das Canas</h2>
+                            <p class="card__local">Ponta das Canas &middot; Florianópolis/SC</p>
+                            <ul class="card__infos">
+                                <li>2 dorm.</li>
+                                <li>2 banh.</li>
+                                <li>1 vaga</li>
+                                <li>83 m&sup2;</li>
+                            </ul>
+                            <a href="contato.html" class="card__link">Agendar visita</a>
+                        </div>
+                    </article>
+
+                    <!-- ---------- IMÓVEL 3 ---------- -->
+                    <article class="card">
+                        <div class="card__galeria">
+
+                            <img class="card__principal" src="Assets/apartamento2/imgpiscina.jpeg"
+                                alt="Piscina do condomínio do apartamento duplex">
+
+                            <span class="card__selo card__selo--aluguel">Aluguel / Diária</span>
+                            <span class="card__contador"></span>
+
+                            <div class="card__miniaturas">
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento2/imgpiscina.jpeg" alt="Piscina do condomínio">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento2/imgapsala.jpeg" alt="Sala">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento2/imgapcozinha.jpeg" alt="Suíte">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento2/imgbanheiro.jpeg" alt="Suíte">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento2/imgq1.jpeg" alt="Churrasqueira">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento2/imgq2.jpeg" alt="Churrasqueira">
+                                </button>
+                                <button type="button" class="miniatura">
+                                    <img src="Assets/apartamento2/imgchurrasqueira.jpeg" alt="Churrasqueira">
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="card__corpo">
+                            <span class="card__preco">R$ 1.500<small>/diária</small></span>
+                            <h2 class="card__titulo">Apartamento duplex em condomínio</h2>
+                            <p class="card__local">Cachoeira do Bom Jesus &middot; Florianópolis/SC</p>
+                            <ul class="card__infos">
+                                <li>2 suítes</li>
+                                <li>1 vaga</li>
+                                <li>Piscina</li>
+                                <li>120 m&sup2;</li>
+                            </ul>
+                            <a href="contato.html" class="card__link">Agendar visita</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ==================== CHAMADA FINAL ==================== -->
+        <section class="chamada">
+            <div class="container chamada__interno">
+                <div class="chamada__texto-bloco">
+                    <h2 class="chamada__titulo">Quer vender ou alugar seu imóvel?</h2>
+                    <p class="chamada__texto">
+                        Faço a avaliação sem compromisso e cuido da divulgação, das visitas e da documentação.
+                    </p>
+                </div>
+                <a href="https://wa.me/5551996478999" class="botao chamada__botao" target="_blank" rel="noopener">
+
+                    Falar no WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="rodape">
+        <div class="container rodape__grid">
+
+            <div class="rodape__coluna">
+                <span class="logo logo--rodape">
+                    <img src="Assets/logoRicardo.png" alt="Ricardo Imóveis" class="logo__imagem">
+                </span>
+                <p class="rodape__sobre">
+                    Corretor de imóveis autônomo, atuando há mais de 10 anos em Taquara
+                    e região do Vale do Paranhana. CRECI/RS 00000-F.
+                </p>
+
+                <div class="redes">
+                    <a href="https://instagram.com/" class="redes__link" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+                            <circle cx="12" cy="12" r="4.2" />
+                            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/" class="redes__link" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <!-- FACEBOOK -->
+                            <path
+                                d="M14 9h3.2V5.9H14c-2.3 0-4.1 1.8-4.1 4.1V12H7.3v3.1h2.6V22H13v-6.9h2.9l.6-3.1H13v-2c0-.6.4-1 1-1z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/" class="redes__link" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <!-- LINKEDIN -->
+                            <path
+                                d="M5 3.5a2.4 2.4 0 1 1 0 4.9 2.4 2.4 0 0 1 0-4.9zM3.1 9.6h3.8V21H3.1zM10 9.6h3.6v1.6h.05c.5-.9 1.75-1.9 3.6-1.9 3.85 0 4.6 2.4 4.6 5.6V21h-3.8v-5.4c0-1.3 0-3-1.85-3-1.85 0-2.15 1.4-2.15 2.9V21H10z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="rodape__coluna">
+                <h3 class="rodape__titulo">Contato</h3>
+                <ul class="rodape__lista">
+                    <li><a href="tel:+555135421000" class="rodape__link">(51) 3542-1000</a></li>
+                    <li><a href="https://wa.me/5551996478999" class="rodape__link" target="_blank">(51) 99647-8999</a></li>
+                    <li>
+                        <a href="https://wa.me/5551996478999" class="rodape__link rodape__link--zap" target="_blank"
+                            rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-5.9c-.25-.12-1.45-.72-1.68-.8-.22-.08-.38-.12-.55.12l-.75.8c-.14.16-.28.18-.52.06a6.6 6.6 0 0 1-3.25-2.84c-.12-.24 0-.37.1-.5l.4-.5c.12-.16.08-.3 0-.42l-.72-1.74c-.19-.45-.38-.39-.52-.4h-.45c-.16 0-.42.06-.63.3-.22.24-.83.81-.83 1.98s.85 2.29.97 2.45c.12.16 1.67 2.55 4.05 3.58 1.9.82 2.29.66 2.7.62.41-.04 1.34-.55 1.53-1.07.19-.53.19-.98.13-1.07-.06-.1-.22-.16-.46-.28z" />
+                            </svg>
+                            Chamar no WhatsApp
+                        </a>
+                    </li>
+                    <li><a href="mailto:contato@ricardoimoveis.com.br"
+                            class="rodape__link">contato@ricardoimoveis.com.br</a></li>
+                </ul>
+            </div>
+
+            <div class="rodape__coluna">
+                <h3 class="rodape__titulo">Navegação</h3>
+                <ul class="rodape__lista">
+                    <li><a href="index.html" class="rodape__link">Início</a></li>
+                    <li><a href="sobre.html" class="rodape__link">Sobre</a></li>
+                    <li><a href="imoveis.html" class="rodape__link">Imóveis</a></li>
+                    <li><a href="depoimentos.html" class="rodape__link">Depoimentos</a></li>
+                    <li><a href="contato.html" class="rodape__link">Contato</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="rodape__base">
+            <div class="container">
+                <p>&copy; 2026 Ricardo Imóveis — Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL DO IMÓVEL ==================== -->
+    <!-- Um só para a página toda: o JS preenche com as fotos da casa clicada -->
+    <div class="modal" hidden> <!-- hidden = começa escondida -->
+        <div class="modal__caixa" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+            <!-- role/aria = leitor de tela entende que é uma janela -->
+
+            <button type="button" class="modal__fechar" aria-label="Fechar">✕</button>
+
+            <div class="modal__palco"> <!-- área escura da foto grande -->
+                <img class="modal__foto" src="" alt=""> <!-- o JS coloca a foto aqui -->
+                <button type="button" class="modal__seta modal__seta--anterior" aria-label="Foto anterior">❮</button>
+                <button type="button" class="modal__seta modal__seta--proxima" aria-label="Próxima foto">❯</button>
+                <span class="modal__contador"></span> <!-- "3 / 7" -->
+            </div>
+
+            <div class="modal__info"> <!-- dados da casa, copiados do card -->
+                <div>
+                    <h2 class="modal__titulo" id="modal-titulo"></h2>
+                    <p class="modal__local"></p>
+                </div>
+                <span class="modal__preco"></span>
+            </div>
+
+            <div class="modal__miniaturas"></div> <!-- o JS cria as miniaturas aqui -->
+
+        </div>
+    </div>
+
+    <script>
+        // ===== GALERIA DOS CARDS (miniatura troca a capa) =====
+        document.querySelectorAll('.card').forEach((card) => {               // repete pra CADA card
+
+            const principal = card.querySelector('.card__principal');          // foto grande do card
+            const contador = card.querySelector('.card__contador');            // selinho "1 / 4"
+            const miniaturas = card.querySelectorAll('.miniatura');            // botões de miniatura
+
+            if (!principal || miniaturas.length === 0) return;                 // card sem galeria? pula
+
+            const total = miniaturas.length;                                   // conta as fotos sozinho
+            contador.textContent = `1 / ${total}`;                             // começa em "1 / total"
+
+            miniaturas.forEach((botao, indice) => {
+                botao.addEventListener('click', () => {
+                    const foto = botao.querySelector('img');                   // imagem da miniatura
+                    principal.src = foto.src;                                  // troca a capa
+                    principal.alt = foto.alt;
+                    contador.textContent = `${indice + 1} / ${total}`;         // +1: índice começa em 0
+                });
+            });
+        });
+
+        // ===== MODAL DO IMÓVEL =====
+        const modal = document.querySelector('.modal');                        // a janela escura
+
+        if (modal) {                                                           // só roda se ela existir
+
+            const modalFoto = modal.querySelector('.modal__foto');             // foto grande
+            const modalTitulo = modal.querySelector('.modal__titulo');         // nome da casa
+            const modalLocal = modal.querySelector('.modal__local');           // bairro/cidade
+            const modalPreco = modal.querySelector('.modal__preco');           // preço
+            const modalContador = modal.querySelector('.modal__contador');     // "3 / 7"
+            const modalMiniaturas = modal.querySelector('.modal__miniaturas'); // faixa de baixo
+            const botaoFechar = modal.querySelector('.modal__fechar');         // ✕
+            const setaAnterior = modal.querySelector('.modal__seta--anterior');// ❮
+            const setaProxima = modal.querySelector('.modal__seta--proxima');  // ❯
+
+            let fotos = [];                                                    // fotos da casa ABERTA agora
+            let fotoAtual = 0;                                                 // qual delas está na tela
+
+            function mostrarFoto(indice) {
+                fotoAtual = (indice + fotos.length) % fotos.length;            // da última volta pra 1ª e vice-versa
+                const foto = fotos[fotoAtual];                                 // pega a foto da vez
+                modalFoto.src = foto.src;                                      // mostra grande
+                modalFoto.alt = foto.alt;
+                modalContador.textContent = `${fotoAtual + 1} / ${fotos.length}`;
+
+                modalMiniaturas.querySelectorAll('.miniatura').forEach((botao, i) => {
+                    botao.classList.toggle('miniatura--ativa', i === fotoAtual); // acende só a miniatura atual
+                });
+
+                modalMiniaturas.children[fotoAtual]
+                    .scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); // rola a faixa até ela
+            }
+
+            function abrirModal(card, indiceInicial) {
+                fotos = [...card.querySelectorAll('.miniatura img')];          // SÓ as fotos deste card
+
+                modalTitulo.textContent = card.querySelector('.card__titulo').textContent; // copia o título
+                modalLocal.textContent = card.querySelector('.card__local').textContent;   // copia o local
+                modalPreco.innerHTML = card.querySelector('.card__preco').innerHTML;       // innerHTML: mantém o <small>/diária
+
+                modalMiniaturas.innerHTML = '';                                // limpa as miniaturas da casa anterior
+                fotos.forEach((foto, i) => {
+                    const botao = document.createElement('button');            // cria um <button> novo
+                    botao.type = 'button';
+                    botao.className = 'miniatura';                             // reaproveita o estilo dos cards
+                    botao.appendChild(foto.cloneNode());                       // copia o <img> pra dentro
+                    botao.addEventListener('click', () => mostrarFoto(i));     // clicou = mostra essa grande
+                    modalMiniaturas.appendChild(botao);                        // coloca na faixa
+                });
+
+                modal.hidden = false;                                          // mostra a modal
+                document.body.classList.add('modal-aberto');                   // trava a rolagem da página de trás
+                mostrarFoto(indiceInicial);                                    // abre na foto que estava na capa
+                botaoFechar.focus();                                           // teclado já cai no ✕
+            }
+
+            function fecharModal() {
+                modal.hidden = true;                                           // esconde
+                document.body.classList.remove('modal-aberto');                // destrava a rolagem
+            }
+
+            document.querySelectorAll('.card').forEach((card) => {
+                const principal = card.querySelector('.card__principal');
+                if (!principal) return;
+
+                principal.addEventListener('click', () => {                    // clicou na capa do card...
+                    const imagens = [...card.querySelectorAll('.miniatura img')];
+                    const indice = imagens.findIndex((img) => img.src === principal.src); // ...descobre qual foto é
+                    abrirModal(card, indice === -1 ? 0 : indice);              // não achou? abre na 1ª
+                });
+            });
+
+            setaAnterior.addEventListener('click', () => mostrarFoto(fotoAtual - 1)); // ❮ volta
+            setaProxima.addEventListener('click', () => mostrarFoto(fotoAtual + 1));  // ❯ avança
+            botaoFechar.addEventListener('click', fecharModal);                       // ✕ fecha
+
+            modal.addEventListener('click', (evento) => {
+                if (evento.target === modal) fecharModal();                    // clicou no fundo escuro = fecha
+            });
+
+            document.addEventListener('keydown', (evento) => {
+                if (modal.hidden) return;                                      // modal fechada? ignora o teclado
+                if (evento.key === 'Escape') fecharModal();                    // Esc fecha
+                if (evento.key === 'ArrowLeft') mostrarFoto(fotoAtual - 1);    // ← foto anterior
+                if (evento.key === 'ArrowRight') mostrarFoto(fotoAtual + 1);   // → próxima foto
+            });
+        }
+
+        // ===== CARROSSEL =====
+        const carouselContainer = document.querySelector('.carousel-container');
+
+        if (carouselContainer) {
+            const slidesWrapper = carouselContainer.querySelector('.slides-wrapper');
+            const slides = carouselContainer.querySelectorAll('.slide');
+            const prevButton = carouselContainer.querySelector('.prev-button');
+            const nextButton = carouselContainer.querySelector('.next-button');
+
+            let currentSlideIndex = 0;
+            const totalSlides = slides.length;
+
+            function updateCarousel() {
+                slidesWrapper.style.transform = `translateX(${-currentSlideIndex * 100}%)`;
+            }
+
+            function goToNextSlide() {
+                currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+                updateCarousel();
+            }
+
+            function goToPrevSlide() {
+                currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+
+            prevButton.addEventListener('click', goToPrevSlide);
+            nextButton.addEventListener('click', goToNextSlide);
+
+            let autoSlideInterval = setInterval(goToNextSlide, 3000);
+            carouselContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+            carouselContainer.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(goToNextSlide, 3000);
+            });
+
+            updateCarousel();
+        }
+    </script>
+
+</body>
+
+</html>

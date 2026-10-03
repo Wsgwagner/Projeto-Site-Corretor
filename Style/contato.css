@@ -1,0 +1,595 @@
+/* ============ 1. RESET ============ */
+
+* {                                    /* "*" = TODOS os elementos da página */
+    margin: 0;                         /* tira a margem que h1, p, ul já vêm */
+    padding: 0;                        /* tira o espaço interno padrão */
+    box-sizing: border-box;            /* padding e borda contam DENTRO da largura */
+}
+
+html {
+    scroll-behavior: smooth;           /* rolagem suave ao clicar em link com #ancora */
+}
+
+ul, ol {
+    list-style: none;                  /* remove as bolinhas e os números das listas */
+}
+
+a {
+    text-decoration: none;             /* tira o sublinhado dos links */
+    color: inherit;                    /* link herda a cor do pai em vez do azul */
+}
+
+img {
+    display: block;                    /* tira o espacinho branco embaixo da imagem */
+    max-width: 100%;                   /* imagem nunca passa da largura do pai */
+    height: auto;                      /* altura acompanha, sem distorcer */
+}
+
+address {
+    font-style: normal;                /* <address> vem em itálico por padrão; aqui tira */
+}
+
+
+/* ============ 2. VARIÁVEIS ============ */
+
+:root {
+    --verde:          #047857;         /* cor primária */
+    --verde-escuro:   #035c43;         /* :hover dos botões */
+    --verde-claro:    #0d9e73;         /* detalhes sobre fundo escuro */
+    --petroleo:       #1E3A3A;         /* cabeçalho e rodapé */
+    --petroleo-claro: #2c5252;         /* fundo dos ícones de rede social */
+
+    --branco:      #ffffff;
+    --cinza-claro: #f4f7f6;            /* fundo claro de seções */
+    --cinza:       #dfe6e4;            /* bordas e divisórias */
+    --texto:       #26302d;            /* texto corrido */
+    --texto-suave: #5f706b;            /* textos secundários */
+    --texto-rodape: #cfdad7;           /* texto claro sobre o petróleo */
+
+    --fonte: 'Open Sans', Arial, Helvetica, sans-serif;
+
+    --container: 1140px;               /* largura máxima do conteúdo */
+    --raio: 8px;                       /* arredondamento padrão */
+    --sombra: 0 4px 18px rgba(30, 58, 58, .12);   /* sombra suave */
+    --transicao: .3s ease;             /* velocidade das animações */
+}
+
+
+/* ============ 3. BASE / TIPOGRAFIA ============ */
+
+body {
+    font-family: var(--fonte);
+    font-weight: 400;                  /* Regular no texto geral */
+    font-size: 16px;                   /* base dos rem */
+    line-height: 1.65;                 /* espaço entre linhas */
+    color: var(--texto);
+    background-color: var(--branco);
+}
+
+h1, h2, h3 {
+    font-weight: 700;                  /* Bold nos títulos */
+    line-height: 1.25;
+    color: var(--petroleo);
+}
+
+h1 { font-size: 2.5rem; }              /* 40px */
+h2 { font-size: 2rem; }                /* 32px */
+h3 { font-size: 1.25rem; }             /* 20px */
+
+.subtitulo {
+    font-weight: 600;                  /* SemiBold */
+    color: var(--verde);
+}
+
+
+/* ============ 4. UTILITÁRIOS ============ */
+
+.container {
+    width: 100%;                       /* ocupa toda a largura... */
+    max-width: var(--container);       /* ...mas trava em 1140px */
+    margin: 0 auto;                    /* centraliza */
+    padding: 0 20px;                   /* respiro nas bordas */
+}
+
+.secao {
+    padding: 70px 20px;                /* respiro em cima/embaixo */
+}
+
+.secao__cabecalho {
+    margin-bottom: 40px;               /* separa o título do mapa */
+}
+
+.secao__cabecalho--centro {
+    text-align: center;                /* centraliza título e texto */
+}
+
+.secao__titulo {
+    margin: 6px 0 12px;                /* 6px acima, 12px abaixo */
+}
+
+.secao__texto {
+    color: var(--texto-suave);
+    max-width: 640px;                  /* linha curta = leitura confortável */
+}
+
+.secao__cabecalho--centro .secao__texto {
+    margin-left: auto;                 /* auto dos dois lados centraliza o bloco */
+    margin-right: auto;
+}
+
+/* --- Botão --- */
+.botao {
+    display: inline-block;             /* aceita padding sem quebrar linha */
+    padding: 13px 28px;
+    border: 2px solid var(--verde);
+    border-radius: var(--raio);
+    background-color: var(--verde);
+    color: var(--branco);
+    font-weight: 600;
+    cursor: pointer;                   /* mãozinha */
+    transition: background-color var(--transicao),
+                color var(--transicao),
+                transform var(--transicao);
+}
+
+.botao:hover {
+    background-color: var(--verde-escuro);
+    border-color: var(--verde-escuro);
+    transform: translateY(-2px);       /* sobe 2px */
+}
+
+
+/* ============ 5. CABEÇALHO E MENU ============ */
+
+.cabecalho {
+    position: sticky;                  /* gruda no topo ao rolar */
+    top: 0;                            /* onde gruda */
+    z-index: 100;                      /* por cima do conteúdo */
+    background-color: var(--petroleo);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .18);
+}
+
+.cabecalho__interno {
+    display: flex;                     /* logo e menu lado a lado */
+    align-items: center;               /* centraliza na vertical */
+    justify-content: space-between;    /* logo à esquerda, menu à direita */
+    min-height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__imagem {
+    height: 60px;                      /* controla a altura; a largura acompanha */
+    width: auto;                       /* mantém a proporção */
+    flex-shrink: 0;                    /* não espreme em tela estreita */
+}
+
+.menu__lista {
+    display: flex;                     /* links em linha */
+    align-items: center;
+    gap: 6px;
+}
+
+.menu__link {
+    display: block;                    /* padding vale na área toda */
+    position: relative;                /* âncora pro ::after */
+    padding: 10px 14px;
+    color: var(--branco);
+    font-weight: 700;
+    font-size: .95rem;
+    border-radius: var(--raio);
+    transition: color var(--transicao), background-color var(--transicao);
+}
+
+.menu__link::after {                   /* sublinhado animado */
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 2px;
+    background-color: var(--verde-claro);
+    transform: scaleX(0);              /* começa invisível */
+    transform-origin: left;            /* cresce da esquerda */
+    transition: transform var(--transicao);
+}
+
+.menu__link:hover::after,
+.menu__link--ativo::after {
+    transform: scaleX(1);              /* risco aparece */
+}
+
+.menu__link--ativo {
+    color: var(--verde-claro);         /* página atual em verde */
+}
+
+.menu__link--destaque {                /* "Contato" em formato de botão */
+    margin-left: 8px;
+    background-color: var(--verde);
+}
+
+.menu__link--destaque:hover {
+    background-color: var(--verde-escuro);
+}
+
+.menu__link--destaque::after {
+    display: none;                     /* botão não tem sublinhado */
+}
+
+.menu__link--destaque.menu__link--ativo {   /* Contato quando ESTAMOS no Contato */
+    color: var(--branco);              /* verde sobre verde não dá pra ler: mantém branco */
+    background-color: var(--verde-escuro);  /* fundo mais escuro marca que é a página atual */
+}
+
+/* --- Hambúrguer --- */
+.menu-toggle {
+    display: none;                     /* checkbox sempre invisível */
+}
+
+.hamburguer {
+    display: none;                     /* só aparece abaixo de 768px */
+    flex-direction: column;            /* barras empilhadas */
+    justify-content: center;
+    gap: 6px;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.hamburguer span {
+    display: block;
+    height: 3px;                       /* espessura da barra */
+    width: 100%;
+    border-radius: 3px;
+    background-color: var(--branco);
+    transition: transform var(--transicao), opacity var(--transicao);
+}
+
+
+/* ============ 6. LOCALIZAÇÃO (MAPA) ============ */
+
+.localizacao .container {
+    max-width: 1400px;                 /* só aqui o container é mais largo: mapa maior */
+}
+
+.localizacao__mapa {
+    height: 75vh;                      /* 75% da altura da tela */
+    min-height: 520px;                 /* nunca menor que 520px no computador */
+    border: 1px solid var(--cinza);    /* contorno fino */
+    border-radius: var(--raio);        /* cantos arredondados */
+    overflow: hidden;                  /* corta o mapa nos cantos */
+    box-shadow: var(--sombra);
+}
+
+.localizacao__mapa iframe {
+    display: block;                    /* tira o espacinho embaixo do iframe */
+    width: 100%;                       /* largura toda da moldura */
+    height: 100%;                      /* altura toda da moldura */
+    border: 0;                         /* tira a borda padrão do iframe */
+}
+
+
+/* ============ 7. CHAMADA FINAL ============ */
+
+.chamada {
+    padding: 55px 20px;
+    background-color: var(--verde);
+    color: var(--branco);
+}
+
+.chamada__interno {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    /* texto à esquerda, botão à direita */
+    flex-wrap: wrap;                   /* em tela estreita, o botão desce */
+    gap: 28px;
+}
+
+.chamada__titulo {
+    color: var(--branco);              /* sobrescreve o petróleo dos h2 */
+    font-size: 1.8rem;
+}
+
+.chamada__texto {
+    color: rgba(255, 255, 255, .9);
+    margin-top: 6px;
+}
+
+.chamada__botao {
+    flex-shrink: 0;                    /* botão não encolhe */
+    background-color: var(--branco);
+    border-color: var(--branco);
+    color: var(--verde);               /* cores invertidas sobre o verde */
+}
+
+.chamada__botao:hover {
+    background-color: var(--petroleo);
+    border-color: var(--petroleo);
+    color: var(--branco);
+}
+
+
+/* ============ 8. RODAPÉ ============ */
+
+.rodape {
+    background-color: var(--petroleo);
+    color: var(--texto-rodape);        /* sem margin-top: encosta na chamada verde */
+    margin-top: 60px;
+}
+
+
+.rodape__grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;   /* logo mais larga + 3 colunas iguais */
+    gap: 36px;
+    padding-top: 55px;
+    padding-bottom: 45px;
+}
+
+.logo--rodape {
+    margin-bottom: 16px;               /* espaço entre logo e texto */
+}
+
+.rodape__sobre {
+    font-size: .92rem;
+    max-width: 340px;                  /* limita a linha */
+    margin-bottom: 20px;
+}
+
+.rodape__titulo {
+    display: inline-block;             /* borda para no fim da palavra */
+    color: var(--branco);
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--verde);   /* risquinho verde */
+}
+
+.rodape__lista li + li {               /* todo li que vem depois de outro li */
+    margin-top: 10px;
+}
+
+.rodape__link,
+.rodape__texto {
+    font-size: .92rem;                 /* links e textos do mesmo tamanho */
+}
+
+.rodape__link {
+    transition: color var(--transicao), padding-left var(--transicao);
+}
+
+.rodape__link:hover {
+    color: var(--verde-claro);
+    padding-left: 5px;                 /* desliza 5px pra direita */
+}
+
+.rodape__link--zap,
+.rodape__link--endereco {
+    display: inline-flex;              /* ícone e texto lado a lado */
+    gap: 8px;
+}
+
+.rodape__link--zap {
+    align-items: center;               /* ícone no meio da linha */
+    font-weight: 600;
+    color: var(--verde-claro);
+}
+
+.rodape__link--endereco {
+    align-items: flex-start;           /* alfinete alinhado com a 1ª linha do endereço */
+}
+
+.rodape__link--zap svg,
+.rodape__link--endereco svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;                    /* ícone não encolhe */
+}
+
+.rodape__link--endereco svg {
+    margin-top: 3px;                   /* desce um pouco pra alinhar com o texto */
+    color: var(--verde-claro);         /* alfinete verde */
+}
+
+/* --- Redes sociais --- */
+.redes {
+    display: flex;
+    gap: 12px;
+}
+
+.redes__link {
+    display: flex;
+    align-items: center;               /* centraliza o ícone na vertical */
+    justify-content: center;           /* e na horizontal */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;                /* círculo */
+    background-color: var(--petroleo-claro);
+    color: var(--branco);
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.redes__link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.redes__link:hover {
+    background-color: var(--verde);
+    transform: translateY(-3px);       /* ícone pula */
+}
+
+/* --- Copyright --- */
+.rodape__base {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    padding: 18px 0;
+    font-size: .85rem;
+    text-align: center;
+}
+
+
+/* ============ 9. MEDIA QUERY — 768px ============ */
+
+@media (max-width: 768px) {
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+
+    .secao {
+        padding: 50px 20px;
+    }
+
+    .secao__cabecalho {
+        margin-bottom: 30px;
+    }
+
+    /* Hambúrguer aparece */
+    .hamburguer {
+        display: flex;
+    }
+
+    /* Menu vira painel que desce */
+    .menu {
+        position: absolute;            /* sobre o conteúdo */
+        top: 100%;                     /* logo abaixo do cabeçalho */
+        left: 0;
+        right: 0;
+        background-color: var(--petroleo);
+        border-top: 1px solid rgba(255, 255, 255, .12);
+        max-height: 0;                 /* fechado */
+        overflow: hidden;
+        transition: max-height .4s ease;
+    }
+
+    .menu-toggle:checked ~ .menu {     /* checkbox marcado = aberto */
+        max-height: 340px;
+    }
+
+    .menu__lista {
+        flex-direction: column;        /* links empilhados */
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 20px;
+    }
+
+    .menu__link {
+        padding: 14px 4px;             /* área de toque maior */
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .menu__link::after {
+        display: none;
+    }
+
+    .menu__link--destaque {
+        margin: 14px 0 0;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    /* Hambúrguer vira X */
+    .menu-toggle:checked ~ .hamburguer span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle:checked ~ .hamburguer span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .hamburguer span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Mapa */
+    .localizacao__mapa {
+        height: 60vh;                  /* continua grande no tablet */
+        min-height: 420px;
+    }
+
+    /* Chamada empilhada */
+    .chamada__interno {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .chamada__titulo {
+        font-size: 1.5rem;
+    }
+
+    /* Rodapé: logo em cima, 3 colunas embaixo */
+    .rodape__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px;
+    }
+
+    .rodape__coluna:first-child {
+        grid-column: 1 / -1;           /* logo ocupa a linha inteira */
+    }
+}
+
+
+/* ============ 10. MEDIA QUERY — 425px ============ */
+
+@media (max-width: 425px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.4rem; }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .secao {
+        padding: 40px 16px;
+    }
+
+    .cabecalho__interno {
+        min-height: 66px;
+    }
+
+    .logo__imagem {
+        height: 50px;                  /* logo menor no celular */
+    }
+
+    .botao {
+        display: block;                /* botão de largura cheia */
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    /* Mapa */
+    .localizacao__mapa {
+        height: 420px;                 /* grande, mas deixa rolar a página */
+        min-height: 0;                 /* anula o mínimo das telas maiores */
+    }
+
+    /* Chamada */
+    .chamada {
+        padding: 40px 16px;
+    }
+
+    .chamada__titulo {
+        font-size: 1.3rem;
+    }
+
+    /* Rodapé em 1 coluna */
+    .rodape__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-top: 40px;
+    }
+
+    .rodape__sobre {
+        max-width: 100%;
+    }
+}
